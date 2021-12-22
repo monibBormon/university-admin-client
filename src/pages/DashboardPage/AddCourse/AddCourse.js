@@ -21,7 +21,7 @@ const AddCourse = () => {
         <div>
             <div className="container mx-auto">
                 <div className="section-title text-center mb-10">
-                    <h2 className='lg:text-5xl text-3xl mt-5 lg:mt-0 capitalize font-semibold'>Add Course for Student</h2>
+                    <h2 className='lg:text-5xl text-3xl mt-5 lg:mt-0 capitalize font-semibold'>Add new Course for Student</h2>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className='border-b-2 w-full pl-5 mb-5 rounded-full py-3 outline-none' {...register("name", { required: true })} placeholder='Student Name' /> <br />
@@ -32,7 +32,7 @@ const AddCourse = () => {
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
 
-                    <input className='border-2 border-black px-14 font-semibold text-xl cursor-pointer rounded-full mx-auto block text-black py-2' type="submit" value='Add New Product' />
+                    <input className='border-2 border-black px-14 font-semibold text-xl cursor-pointer rounded-full mx-auto block text-black py-2' type="submit" value='Add New Course' />
                 </form>
             </div>
         </div>

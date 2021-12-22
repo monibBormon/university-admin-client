@@ -9,6 +9,7 @@ import AllCourses from './pages/DashboardPage/AllCourses/AllCourses';
 import Dashboard from './pages/DashboardPage/Dashboard/Dashboard';
 import DashBoardHome from './pages/DashboardPage/DashboardHome/DashBoardHome';
 import MakeAdmin from './pages/DashboardPage/MakeAdmin/MakeAdmin';
+import StudentDetails from './pages/DashboardPage/StudentDetails/StudentDetails';
 import Home from './pages/HomePage/Home/Home';
 import Footer from './pages/SharedPage/Footer/Footer';
 import Header from './pages/SharedPage/Header/Header';
@@ -31,6 +32,7 @@ function App() {
               <Route path='add-course' element={<AddCourse />} />
               <Route path='make-admin' element={<MakeAdmin />} />
             </Route>
+            <Route path='/student-details/:id' element={<StudentDetails />}></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
