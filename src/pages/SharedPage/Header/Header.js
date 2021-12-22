@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 
 
 // const user = {
@@ -17,6 +18,7 @@ import { Link } from 'react-router-dom';
 //     return classes.filter(Boolean).join(' ')
 // }
 const Header = () => {
+    const { user, logOut, admin } = useFirebase()
     return (
         <div>
             <div className="min-h-full">
@@ -33,9 +35,18 @@ const Header = () => {
                                     <div className="hidden md:block text-right">
                                         <div className="ml-10 space-x-4">
                                             <Link className='' to='/'>Home</Link>
-                                            <Link className='' to='/explore-cars'>Services</Link>
+                                            <Link className='' to='/explore-cars'>Courses</Link>
                                             <Link className='' to='/about'>About Us</Link>
-                                            <Link to='/login'>Login/Register</Link>
+                                            {admin && <Link className='' to='/dashboard'>Dashboard</Link>}
+                                            { }
+                                            {
+                                                user.email ? <div className='inline-block'>
+                                                    <span>Hello! <span className='font-semibold'>{user.displayName}</span></span>
+                                                    <Link to='/'>
+                                                        <button onClick={logOut} className='ml-4 text-orange font-semibold'>Log Out</button></Link>
+                                                </div> :
+                                                    <Link to='/login'>Login/Register</Link>
+                                            }
                                         </div>
                                     </div>
                                     <div className="-mr-2 flex justify-end md:hidden">
