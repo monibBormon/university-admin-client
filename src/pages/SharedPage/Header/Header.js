@@ -35,10 +35,9 @@ const Header = () => {
                                     <div className="hidden md:block text-right">
                                         <div className="ml-10 space-x-4">
                                             <Link className='' to='/'>Home</Link>
-                                            <Link className='' to='/explore-cars'>Courses</Link>
+                                            <Link className='' to='/courses'>Courses</Link>
                                             <Link className='' to='/about'>About Us</Link>
                                             {admin && <Link className='' to='/dashboard'>Dashboard</Link>}
-                                            { }
                                             {
                                                 user.email ? <div className='inline-block'>
                                                     <span>Hello! <span className='font-semibold'>{user.displayName}</span></span>
@@ -65,10 +64,18 @@ const Header = () => {
 
                             <Disclosure.Panel className="md:hidden">
                                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                                    <Link className='text-white font-semibold hover:text-red-400 duration-300 block' to='/'>Home</Link>
-                                    <Link className='text-white font-semibold hover:text-red-400 duration-300 block' to='/explore-cars'>Explore Cars</Link>
-                                    <Link className='text-white font-semibold hover:text-red-400 duration-300 block' to='/about'>About Us</Link>
-
+                                    <Link className='text-black  font-semibold hover:text-red-400 duration-300 block' to='/'>Home</Link>
+                                    <Link className='text-black  font-semibold hover:text-red-400 duration-300 block' to='/courses'>Courses</Link>
+                                    <Link className='text-black  font-semibold hover:text-red-400 duration-300 block' to='/about'>About Us</Link>
+                                    {admin && <Link className='text-black  font-semibold hover:text-red-400 duration-300 block' to='/dashboard'>Dashboard</Link>}
+                                    {
+                                        user.email ? <div className='inline-block'>
+                                            <span>Hello! <span className='font-semibold'>{user.displayName}</span></span>
+                                            <Link to='/'>
+                                                <button onClick={logOut} className='ml-4 text-orange font-semibold'>Log Out</button></Link>
+                                        </div> :
+                                            <Link to='/login'>Login/Register</Link>
+                                    }
                                 </div>
                             </Disclosure.Panel>
                         </>

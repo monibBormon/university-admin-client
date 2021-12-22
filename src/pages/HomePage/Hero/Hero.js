@@ -4,9 +4,9 @@ import './Hero.css'
 const Hero = () => {
     return (
         <div className='hero-area'>
-            <div className="container mx-auto py-16">
-                <div className="grid grid-cols-2 gap-4 items-center">
-                    <div className='hero-text'>
+            <div className="container mx-auto py-16 px-5 lg:px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+                    <div className='hero-text mb-5 lg:mb-0'>
                         <h2 className='text-6xl mb-8'>Better Education <br /> Better World</h2>
                         <p className='mb-8'>Wondering how this is possible and whether learning in schools is sufficient? What else can you do to get more knowledge and experience?</p>
                         <button className='bg-black text-white px-8 font-semibold rounded py-2'>Learn More</button>

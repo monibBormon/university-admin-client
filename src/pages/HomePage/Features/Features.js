@@ -3,12 +3,12 @@ import React from 'react';
 const Features = () => {
     return (
         <div>
-            <div className="container mx-auto py-16">
+            <div className="container mx-auto py-16 px-5 lg:px-0">
                 <div className="section-title mb-12">
                     <h4 className='text-5xl font-semibold pb-2'>Features</h4>
                     <span className='block w-20 h-1 bg-black'></span>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="feature-box text-center px-10 shadow-lg py-10">
                         <div className="feature-icon mb-5">
                             <i class="fas fa-user-graduate text-5xl"></i>

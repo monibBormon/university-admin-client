@@ -20,7 +20,7 @@ const MakeAdmin = () => {
     }
     return (
         <div className='lg:py-10 container mx-auto'>
-            <h3 className='text-center text-2xl mb-5 font-semibold'>Make Admin </h3>
+            <h3 className='text-center text-4xl mb-5 font-semibold'>Make Admin </h3>
             {success && <div>
                 <p className='text-red-500'>admin added succesfully</p>
             </div>}
@@ -29,7 +29,7 @@ const MakeAdmin = () => {
                 {/* errors will return when field validation fails  */}
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className='border-2 border-black px-14 font-semibold text-xl cursor-pointer rounded-full mx-auto block py-2' type="submit" value='Make admin' />
+                <input className='border-2 border-black px-10 font-semibold text-xl cursor-pointer rounded mx-auto block py-2' type="submit" value='Make admin' />
             </form>
         </div>
     );
