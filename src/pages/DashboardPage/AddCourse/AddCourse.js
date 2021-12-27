@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useForm } from "react-hook-form";
 
 const AddCourse = () => {
     // const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -29,7 +28,7 @@ const AddCourse = () => {
                 itemvalues: [{}]
             });
         };
-        fetch('http://localhost:5000/courses', {
+        fetch('https://aqueous-waters-71286.herokuapp.com/courses', {
             method: 'POST',
             body: formData
         }).then(res => res.json())

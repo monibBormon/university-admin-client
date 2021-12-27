@@ -6,10 +6,12 @@ const AllCourses = () => {
     const [courses, setCourses] = useState([])
     const [pageCount, setPageCount] = useState(0)
     const [page, setPage] = useState(0)
+    const [isDelete, setIsDelete] = useState(null)
 
+    console.log(isDelete)
     const pageSize = 5
     useEffect(() => {
-        fetch(`http://localhost:5000/courses?page=${page}&&size=${pageSize}`)
+        fetch(`https://aqueous-waters-71286.herokuapp.com/courses?page=${page}&&size=${pageSize}`)
             .then(res => res.json())
             .then(data => {
                 setCourses(data.result)
@@ -18,6 +20,26 @@ const AllCourses = () => {
                 setPageCount(pageNumber)
             })
     }, [page])
+
+    // delete course 
+    const handleDeleteProduct = (id) => {
+        const confirmation = window.confirm('Are you sure product will be delete parmanently?')
+        if (confirmation) {
+            fetch(`https://aqueous-waters-71286.herokuapp.com/delete/${id}`, {
+                method: 'DELETE',
+                headers: { 'content-type': 'application/json' }
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setIsDelete(true)
+                        alert('Deleted Successfully.')
+                        window.location.reload()
+                    } else {
+                        setIsDelete(false)
+                    }
+                })
+        }
+    }
 
     return (
         <div>
@@ -35,6 +57,7 @@ const AllCourses = () => {
                                             <Link to={`/student-details/${course._id}`}>
                                                 <button className='border-2 border-red-500 rounded-full px-2 text-sm mr-1'>View Details</button>
                                             </Link>
+                                            <button onClick={() => handleDeleteProduct(course._id)} className='border-2 border-red-500 rounded-full px-2 text-sm mr-1'>Delete</button>
                                         </div>
                                     </div>
                                 ))}

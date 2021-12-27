@@ -6,10 +6,10 @@ const StudentDetails = () => {
     console.log(id)
     const [course, setCourse] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/course-details/${id}`)
+        fetch(`https://aqueous-waters-71286.herokuapp.com/course-details/${id}`)
             .then(res => res.json())
             .then(data => setCourse(data))
-    }, [])
+    }, [id])
     return (
         <div>
             <div className="container mx-auto py-10">

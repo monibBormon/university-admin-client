@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Link as NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 
 const Dashboard = () => {
