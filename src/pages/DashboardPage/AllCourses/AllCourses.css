@@ -1,0 +1,9 @@
+.pagination .selected{
+    background-color: #000;
+    color: #fff;
+}
+.pagination button{
+    padding: 0 10px;
+    margin-right: 5px;
+    border: 1px solid;
+}
