@@ -15,7 +15,7 @@ const StudentDetails = () => {
             <div className="container mx-auto py-10">
                 <div className="grid grid-cols-6 gap-4">
                     <div className=" col-start-2 col-span-4 details-box rounded-lg shadow-lg mx-auto px-10 py-5">
-                        <img className='w-50 mx-auto rounded' src={course.img} alt="student bg" />
+                        <img className='w-40 mx-auto rounded' src={`data:image;base64,${course.img}`} alt="student bg" />
                         <div className='mt-5 text-center'>
                             <h4 className='text-3xl font-semibold mb-3'>{course.name}</h4>
                             <p className='mb-2'>Course Title: {course.title}</p>

@@ -29,7 +29,7 @@ const AllCourses = () => {
                             <div className="overflow-hidden">
                                 {courses.map((course, index) => (
                                     <div key={course._id} className='flex shadow p-3 mb-3'>
-                                        <img src={course.img} className='w-20 rounded' alt="" />
+                                        <img src={`data:image;base64,${course.img}`} className='w-20 rounded' alt="" />
                                         <div className='ml-5'>
                                             <h3 className='text-2xl mb-2'>{course.name}</h3>
                                             <Link to={`/student-details/${course._id}`}>
